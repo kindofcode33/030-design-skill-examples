@@ -14,7 +14,7 @@ const NAV_ITEMS = [
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
         <Route path="/" element={<DesignSystem />} />
         <Route
