@@ -1,0 +1,329 @@
+/* ============================================================================
+   ASU Design System — Tailwind v4 Theme
+   ----------------------------------------------------------------------------
+   CANONICAL SOURCE for all ASU design token VALUES (hex, px, rem,
+   line-height, letter-spacing). This file is the truth; the markdown
+   documentation in references/tailwind-v4-theme.md describes what's here.
+
+   DRIFT-PREVENTION RULES (read before editing):
+     - Never reintroduce --color-primary-* (collapsed into --color-asu-*)
+     - Never define --color-gray-50..700 (keep Tailwind defaults intact;
+       use --color-asu-gray-* explicitly when ASU grays are needed)
+     - Never reintroduce hex literals in :root or .dark
+       (every shadcn semantic token must resolve through var(--color-asu-*))
+     - Never use --max-w-* (Tailwind v4 requires --container-* for max-widths)
+     - Never use var() inside @theme inline for fonts (literal stacks only)
+   ============================================================================ */
+
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    /* ===== ASU Brand Colors — Primary ===== */
+    --color-asu-maroon: #8C1D40;
+    --color-asu-gold: #FFC627;
+    --color-asu-rich-black: #000000;
+    --color-asu-white: #FFFFFF;
+
+    /* ===== ASU Brand Colors — Grayscale =====
+       Use asu-gray-1 through asu-gray-7 — never override Tailwind's default
+       gray-* scale, so `text-gray-500` etc. still resolves to Tailwind defaults
+       (not ASU colors). This keeps Tailwind's defaults predictable and forces
+       intentional use of ASU grays via the asu-gray-* namespace. */
+    --color-asu-gray-1: #191919;
+    --color-asu-gray-2: #484848;
+    --color-asu-gray-3: #747474;
+    --color-asu-gray-4: #BFBFBF;
+    --color-asu-gray-5: #D0D0D0;
+    --color-asu-gray-6: #E8E8E8;
+    --color-asu-gray-7: #FAFAFA;
+
+    /* ===== ASU System Colors (values canonical in SKILL.md) ===== */
+    --color-asu-error: #CC2F2F;
+    --color-asu-error-text-light: #B72A42;
+    --color-asu-error-text-dark: #FF7B8E;
+    --color-asu-error-bg: #F7DDDD;
+
+    --color-asu-warning: #BD4800;
+    --color-asu-warning-text-light: #8D4800;
+    --color-asu-warning-text-dark: #FFB034;
+    --color-asu-warning-bg: #FFEADE;
+
+    --color-asu-success: #446D12;
+    --color-asu-success-text: #446D12;
+    --color-asu-success-bg: #E9F5DB;
+
+    --color-asu-info: #126877;
+    --color-asu-info-text-blue: #008FF3;
+    --color-asu-info-bg: #D6F0FA;
+
+    /* Short aliases for system colors */
+    --color-error: #CC2F2F;
+    --color-error-text-light: #B72A42;
+    --color-error-text-dark: #FF7B8E;
+    --color-error-bg: #F7DDDD;
+    --color-warning: #BD4800;
+    --color-warning-text-light: #8D4800;
+    --color-warning-text-dark: #FFB034;
+    --color-warning-bg: #FFEADE;
+    --color-success: #446D12;
+    --color-success-text: #446D12;
+    --color-success-bg: #E9F5DB;
+    --color-info: #126877;
+    --color-info-text: #126877;
+    --color-info-bg: #D6F0FA;
+
+    /* ===== ASU Link Colors (Visited States) ===== */
+    --color-asu-visited-maroon: #440E22;
+    --color-asu-visited-gold: #D3A524;
+
+    /* ===== ASU Typography ===== */
+    --font-sans: Arial, Helvetica, "Nimbus Sans L", "Liberation Sans", FreeSans, sans-serif;
+    --font-heading: Arial, Helvetica, "Nimbus Sans L", "Liberation Sans", FreeSans, sans-serif;
+    --font-asu: "Neue Haas Grotesk", Arial, Helvetica, "Nimbus Sans L", "Liberation Sans", FreeSans, sans-serif;
+
+    /* Heading scale */
+    --text-asu-h1-hero: clamp(36px, 5vw, 56px);
+    --text-asu-h1-hero--line-height: 1.1;
+    --text-asu-h1-hero--letter-spacing: -0.02em;
+
+    --text-asu-h1: 4rem;
+    --text-asu-h1--line-height: 4.25rem;
+    --text-asu-h1--letter-spacing: -0.035em;
+
+    --text-asu-h1-article: 3rem;
+    --text-asu-h1-article--line-height: 3.25rem;
+    --text-asu-h1-article--letter-spacing: -0.035em;
+
+    --text-asu-h1-mobile: 2.25rem;
+    --text-asu-h1-mobile--line-height: 2.5rem;
+    --text-asu-h1-mobile--letter-spacing: -0.035em;
+
+    --text-asu-h2: 2.5rem;
+    --text-asu-h2--line-height: 2.75rem;
+    --text-asu-h2--letter-spacing: -0.035em;
+
+    --text-asu-h2-mobile: 2rem;
+    --text-asu-h2-mobile--line-height: 2.125rem;
+    --text-asu-h2-mobile--letter-spacing: -0.035em;
+
+    --text-asu-h3: 1.5rem;
+    --text-asu-h3--line-height: 1.75rem;
+    --text-asu-h3--letter-spacing: -0.035em;
+
+    --text-asu-h4: 1.25rem;
+    --text-asu-h4--line-height: 1.625rem;
+    --text-asu-h4--letter-spacing: 0em;
+
+    --text-asu-h5: 1rem;
+    --text-asu-h5--line-height: 1.5rem;
+    --text-asu-h5--letter-spacing: 0em;
+
+    /* Body scale */
+    --text-asu-body-lg: 1.25rem;
+    --text-asu-body-lg--line-height: 1.75rem;
+
+    --text-asu-body: 1rem;
+    --text-asu-body--line-height: 1.5rem;
+
+    --text-asu-body-sm: 0.875rem;
+    --text-asu-body-sm--line-height: 1.125rem;
+
+    --text-asu-body-xs: 0.75rem;
+    --text-asu-body-xs--line-height: 1.125rem;
+
+    /* ===== ASU Spacing (8px base unit) ===== */
+    --spacing-asu-1: 8px;
+    --spacing-asu-2: 16px;
+    --spacing-asu-3: 24px;
+    --spacing-asu-4: 32px;
+    --spacing-asu-5: 40px;
+    --spacing-asu-6: 48px;
+    --spacing-asu-7: 56px;
+    --spacing-asu-8: 72px;
+    --spacing-asu-9: 96px;
+
+    /* ===== ASU Component-Specific Dimensions =====
+       UDS-specified component dimensions, all aligned to the 8px grid.
+       Use h-asu-hero-{lg,md,sm} for hero heights;
+       use max-w-asu-alert / max-w-asu-tab-max / min-w-asu-tab-min for
+       component containers. */
+    --spacing-asu-hero-lg: 648px;   /* 81×8 — large hero, default */
+    --spacing-asu-hero-md: 512px;   /* 64×8 — medium hero */
+    --spacing-asu-hero-sm: 352px;   /* 44×8 — small hero */
+
+    /* ===== ASU Layout (max-widths) ===== */
+    /* CRITICAL: Use --container-* NOT --max-w-* for Tailwind v4 */
+    --container-asu-content: 1200px;
+    --container-asu-max: 1920px;
+    --container-asu-alert: 704px;     /* 88×8 — system alert max-w */
+    --container-asu-modal: 704px;     /* 88×8 — modal content block max-w */
+    --container-asu-tab-max: 688px;   /* 86×8 — tabbed-panel max-w (honors body line-length ≤700px) */
+    --container-asu-tab-min: 280px;   /* 35×8 — tabbed-panel min-w (honors body line-length ≥252px) */
+
+    /* ===== ASU Animations ===== */
+    --animate-fade-in: fade-in 0.1s linear;
+    --animate-slide-alert: slide-alert 0.5s cubic-bezier(0.19, 1, 0.19, 1);
+
+    /* ===== shadcn Semantic Color Tokens (Tailwind v4 registration) ===== */
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+
+    /* ===== Radius ===== */
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* ============================================================================
+   shadcn Semantic Token Overrides
+   ----------------------------------------------------------------------------
+   Every shadcn semantic token resolves through a var() reference to a canonical
+   asu-* token defined in @theme inline above. Update a value once there;
+   every shadcn-themed component picks it up.
+   ============================================================================ */
+
+:root {
+    --background: var(--color-asu-white);
+    --foreground: var(--color-asu-gray-1);
+    --card: var(--color-asu-white);
+    --card-foreground: var(--color-asu-gray-1);
+    --popover: var(--color-asu-white);
+    --popover-foreground: var(--color-asu-gray-1);
+    --primary: var(--color-asu-gold);
+    --primary-foreground: var(--color-asu-gray-1);
+    --secondary: var(--color-asu-maroon);
+    --secondary-foreground: var(--color-asu-white);
+    --muted: var(--color-asu-gray-6);
+    --muted-foreground: var(--color-asu-gray-3);
+    --accent: var(--color-asu-gray-7);
+    --accent-foreground: var(--color-asu-gray-1);
+    --destructive: var(--color-asu-error);
+    --border: var(--color-asu-gray-4);
+    --input: var(--color-asu-gray-4);
+    --ring: var(--color-asu-gold);
+    --chart-1: var(--color-asu-maroon);
+    --chart-2: var(--color-asu-gold);
+    --chart-3: var(--color-asu-gray-1);
+    --chart-4: var(--color-asu-gray-3);
+    --chart-5: var(--color-asu-gray-6);
+    --radius: 0rem;
+    --sidebar: var(--color-asu-gray-7);
+    --sidebar-foreground: var(--color-asu-gray-1);
+    --sidebar-primary: var(--color-asu-maroon);
+    --sidebar-primary-foreground: var(--color-asu-white);
+    --sidebar-accent: var(--color-asu-gray-6);
+    --sidebar-accent-foreground: var(--color-asu-gray-1);
+    --sidebar-border: var(--color-asu-gray-4);
+    --sidebar-ring: var(--color-asu-gold);
+}
+
+.dark {
+    --background: var(--color-asu-gray-1);
+    --foreground: var(--color-asu-gray-7);
+    --card: var(--color-asu-gray-2);
+    --card-foreground: var(--color-asu-gray-7);
+    --popover: var(--color-asu-gray-2);
+    --popover-foreground: var(--color-asu-gray-7);
+    --primary: var(--color-asu-gold);
+    --primary-foreground: var(--color-asu-gray-1);
+    --secondary: var(--color-asu-maroon);
+    --secondary-foreground: var(--color-asu-white);
+    --muted: var(--color-asu-gray-2);
+    --muted-foreground: var(--color-asu-gray-4);
+    --accent: var(--color-asu-gray-2);
+    --accent-foreground: var(--color-asu-gray-7);
+    --destructive: var(--color-asu-error-text-dark);
+    --border: var(--color-asu-gray-3);
+    --input: var(--color-asu-gray-3);
+    --ring: var(--color-asu-gold);
+    --chart-1: var(--color-asu-gold);
+    --chart-2: var(--color-asu-maroon);
+    --chart-3: var(--color-asu-gray-7);
+    --chart-4: var(--color-asu-gray-4);
+    --chart-5: var(--color-asu-gray-3);
+    --sidebar: var(--color-asu-gray-2);
+    --sidebar-foreground: var(--color-asu-gray-7);
+    --sidebar-primary: var(--color-asu-gold);
+    --sidebar-primary-foreground: var(--color-asu-gray-1);
+    --sidebar-accent: var(--color-asu-gray-3);
+    --sidebar-accent-foreground: var(--color-asu-gray-7);
+    --sidebar-border: var(--color-asu-gray-3);
+    --sidebar-ring: var(--color-asu-gold);
+}
+
+/* ============================================================================
+   Keyframe Animations
+   ============================================================================ */
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slide-alert {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-32px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* ============================================================================
+   Base Layer
+   ============================================================================ */
+
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+    body {
+        @apply bg-background text-foreground font-sans;
+    }
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+}
