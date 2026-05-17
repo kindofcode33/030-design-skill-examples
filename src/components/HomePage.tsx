@@ -293,7 +293,7 @@ export default function HomePage() {
       {/* Block quote */}
       <section
         className="py-asu-6 md:py-asu-9"
-        style={{ backgroundImage: 'url(/asu/backgrounds/h5fBqGHPdBnWNSjkXQUbHQ.png)', backgroundRepeat: 'repeat' }}
+        style={{ backgroundImage: `url(${import.meta.env.BASE_URL}asu/backgrounds/h5fBqGHPdBnWNSjkXQUbHQ.png)`, backgroundRepeat: 'repeat' }}
       >
         <div className="max-w-asu-content mx-auto px-asu-3">
           <p className="text-sm font-bold text-asu-gray-1 mb-asu-2">Our mission</p>
@@ -569,7 +569,7 @@ export default function HomePage() {
       {/* Block quote — dark */}
       <section
         className="py-asu-6 md:py-asu-9 bg-asu-gray-1"
-        style={{ backgroundImage: 'url(/asu/backgrounds/gIYRGFq7o6-mPadTBNFszg.png)', backgroundRepeat: 'repeat' }}
+        style={{ backgroundImage: `url(${import.meta.env.BASE_URL}asu/backgrounds/gIYRGFq7o6-mPadTBNFszg.png)`, backgroundRepeat: 'repeat' }}
       >
         <div className="max-w-asu-content mx-auto px-asu-3">
           <p className="text-sm font-bold text-asu-gold mb-asu-2">Why it matters</p>

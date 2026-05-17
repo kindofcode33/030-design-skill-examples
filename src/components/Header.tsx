@@ -42,7 +42,7 @@ export default function Header({ nav = [], activeItem }: HeaderProps) {
         <div className="bg-white border-b border-asu-gray-5">
           <div className="max-w-asu-content mx-auto px-asu-3 flex items-stretch">
             <a href="/" className="flex items-center flex-shrink-0 mr-asu-3">
-              <img src="/asu/logos/asu-vertical.svg" alt="ASU" className="h-16 w-auto" />
+              <img src={`${import.meta.env.BASE_URL}asu/logos/asu-vertical.svg`} alt="ASU" className="h-16 w-auto" />
             </a>
 
             <div className="flex flex-col justify-center">

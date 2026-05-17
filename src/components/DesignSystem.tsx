@@ -204,7 +204,7 @@ export default function DesignSystem() {
       <aside className="fixed top-0 left-0 w-64 h-screen bg-white border-r border-asu-gray-4 z-50 flex flex-col">
         <div className="sticky top-0 border-b border-asu-gray-4 bg-white z-10">
           <div className="p-asu-3 pb-asu-2">
-            <img src="/asu/logos/asu-logo.png" alt="ASU Logo" className="h-10 mb-asu-2" />
+            <img src={`${import.meta.env.BASE_URL}asu/logos/asu-logo.png`} alt="ASU Logo" className="h-10 mb-asu-2" />
             <p className="text-asu-body-xs font-bold text-asu-gray-3">ASU Design Skill</p>
             <h1 className="text-asu-h4 font-bold text-asu-gray-1">Visual Examples</h1>
           </div>
@@ -512,27 +512,27 @@ export default function DesignSystem() {
         <h3 className="text-asu-h4 font-bold text-asu-gray-1 mb-asu-2">Logos</h3>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-asu-3 mb-asu-5">
           <div className="border border-asu-gray-4 rounded-none p-asu-3 flex flex-col items-center gap-2">
-            <img src="/asu/logos/asu-logo.png" alt="ASU logo primary" className="h-16 w-auto object-contain" />
+            <img src={`${import.meta.env.BASE_URL}asu/logos/asu-logo.png`} alt="ASU logo primary" className="h-16 w-auto object-contain" />
             <p className="text-asu-body-xs text-asu-gray-3 font-mono text-center">/asu/logos/asu-logo.png</p>
           </div>
           <div className="border border-asu-gray-4 rounded-none p-asu-3 flex flex-col items-center gap-2">
-            <img src="/asu/logos/asu-logo-horizontal.png" alt="ASU logo horizontal" className="h-12 w-auto object-contain" />
+            <img src={`${import.meta.env.BASE_URL}asu/logos/asu-logo-horizontal.png`} alt="ASU logo horizontal" className="h-12 w-auto object-contain" />
             <p className="text-asu-body-xs text-asu-gray-3 font-mono text-center">/asu/logos/asu-logo-horizontal.png</p>
           </div>
           <div className="border border-asu-gray-4 rounded-none p-asu-3 flex flex-col items-center gap-2">
-            <img src="/asu/logos/asu-vertical.svg" alt="ASU logo vertical" className="h-16 w-auto object-contain" />
+            <img src={`${import.meta.env.BASE_URL}asu/logos/asu-vertical.svg`} alt="ASU logo vertical" className="h-16 w-auto object-contain" />
             <p className="text-asu-body-xs text-asu-gray-3 font-mono text-center">/asu/logos/asu-vertical.svg</p>
           </div>
           <div className="border border-asu-gray-4 rounded-none p-asu-3 bg-asu-gray-1 flex flex-col items-center gap-2">
-            <img src="/asu/logos/asu-horizontal-white.svg" alt="ASU logo white on dark" className="h-12 w-auto object-contain" />
+            <img src={`${import.meta.env.BASE_URL}asu/logos/asu-horizontal-white.svg`} alt="ASU logo white on dark" className="h-12 w-auto object-contain" />
             <p className="text-asu-body-xs text-asu-gray-5 font-mono text-center">/asu/logos/asu-horizontal-white.svg</p>
           </div>
           <div className="border border-asu-gray-4 rounded-none p-asu-3 flex flex-col items-center gap-2">
-            <img src="/asu/logos/footer-rank.webp" alt="Footer ranking badge" className="h-14 w-auto object-contain" />
+            <img src={`${import.meta.env.BASE_URL}asu/logos/footer-rank.webp`} alt="Footer ranking badge" className="h-14 w-auto object-contain" />
             <p className="text-asu-body-xs text-asu-gray-3 font-mono text-center">/asu/logos/footer-rank.webp</p>
           </div>
           <div className="border border-asu-gray-4 rounded-none p-asu-3 flex flex-col items-center gap-2">
-            <img src="/asu/favicon.png" alt="Favicon" className="h-8 w-auto object-contain" />
+            <img src={`${import.meta.env.BASE_URL}asu/favicon.png`} alt="Favicon" className="h-8 w-auto object-contain" />
             <p className="text-asu-body-xs text-asu-gray-3 font-mono text-center">/asu/favicon.png</p>
           </div>
         </div>
@@ -550,10 +550,10 @@ export default function DesignSystem() {
           ].map((file) => (
             <button
               key={file}
-              onClick={() => setTextureModal(`/asu/backgrounds/${file}`)}
+              onClick={() => setTextureModal(`${import.meta.env.BASE_URL}asu/backgrounds/${file}`)}
               className="border border-asu-gray-4 rounded-none overflow-hidden text-left hover:border-asu-gold hover:shadow-lg transition-all cursor-pointer"
             >
-              <div className="h-24 bg-repeat" style={{ backgroundImage: `url(/asu/backgrounds/${file})` }} />
+              <div className="h-24 bg-repeat" style={{ backgroundImage: `url(${import.meta.env.BASE_URL}asu/backgrounds/${file})` }} />
               <p className="text-asu-body-xs text-asu-gray-3 font-mono p-2 border-t border-asu-gray-4">{file}</p>
             </button>
           ))}
@@ -627,7 +627,7 @@ export default function DesignSystem() {
           </div>
           <div className="bg-white border-b border-asu-gray-5 px-asu-3 flex items-stretch">
             <div className="flex items-center flex-shrink-0 mr-asu-3 py-asu-2">
-              <img src="/asu/logos/asu-vertical.svg" alt="ASU" className="h-16 w-auto" />
+              <img src={`${import.meta.env.BASE_URL}asu/logos/asu-vertical.svg`} alt="ASU" className="h-16 w-auto" />
             </div>
             <div className="flex flex-col justify-center">
               <span className="text-asu-h4 font-bold text-asu-gray-1 leading-[1.1]">Arizona State University</span>
@@ -648,7 +648,7 @@ export default function DesignSystem() {
         </p>
         <div className="border border-asu-gray-4 rounded-none overflow-hidden">
           <div className="bg-asu-gray-1 h-24 flex items-center justify-between px-asu-3">
-            <img src="/asu/logos/asu-horizontal-white.svg" alt="ASU" className="h-10 w-auto" />
+            <img src={`${import.meta.env.BASE_URL}asu/logos/asu-horizontal-white.svg`} alt="ASU" className="h-10 w-auto" />
             <div className="flex gap-asu-3">
               <div className="w-10 h-10 bg-asu-gray-2 flex items-center justify-center hover:bg-white/20 transition-colors"><span className="text-white text-xs font-bold">fb</span></div>
               <div className="w-10 h-10 bg-asu-gray-2 flex items-center justify-center hover:bg-white/20 transition-colors"><span className="text-white text-xs font-bold">ig</span></div>
@@ -664,7 +664,7 @@ export default function DesignSystem() {
               <span className="text-asu-body text-asu-gray-1 font-bold">Contact ASU</span>
               <span className="text-asu-body text-asu-gray-1 font-bold">My ASU</span>
             </div>
-            <img src="/asu/logos/footer-rank.webp" alt="Ranked #1 in innovation" className="h-[50px] w-auto" />
+            <img src={`${import.meta.env.BASE_URL}asu/logos/footer-rank.webp`} alt="Ranked #1 in innovation" className="h-[50px] w-auto" />
           </div>
           <div className="bg-asu-gray-6 h-14 flex items-center px-asu-3">
             <div className="flex items-center gap-asu-2 flex-wrap">
@@ -980,7 +980,7 @@ export default function DesignSystem() {
           Full-width typographic statement for institutional quotes (charter, values). Hero H1 scale. Gold highlights on 1-3 key phrases. Light and dark variants with topographic background texture.
         </p>
         <div className="space-y-asu-4">
-          <div className="py-12 rounded-none" style={{ backgroundImage: 'url(/asu/backgrounds/h5fBqGHPdBnWNSjkXQUbHQ.png)', backgroundRepeat: 'repeat' }}>
+          <div className="py-12 rounded-none" style={{ backgroundImage: `url(${import.meta.env.BASE_URL}asu/backgrounds/h5fBqGHPdBnWNSjkXQUbHQ.png)`, backgroundRepeat: 'repeat' }}>
             <div className="max-w-asu-content mx-auto px-6">
               <p className="text-sm font-bold text-asu-gray-1 mb-4">The ASU difference:</p>
               <h2 className="text-asu-h1-hero font-black text-asu-gray-1">
@@ -989,7 +989,7 @@ export default function DesignSystem() {
               <p className="text-sm text-asu-gray-3 mt-6">Excerpt from ASU charter</p>
             </div>
           </div>
-          <div className="py-12 bg-asu-gray-1 rounded-none" style={{ backgroundImage: 'url(/asu/backgrounds/gIYRGFq7o6-mPadTBNFszg.png)', backgroundRepeat: 'repeat' }}>
+          <div className="py-12 bg-asu-gray-1 rounded-none" style={{ backgroundImage: `url(${import.meta.env.BASE_URL}asu/backgrounds/gIYRGFq7o6-mPadTBNFszg.png)`, backgroundRepeat: 'repeat' }}>
             <div className="max-w-asu-content mx-auto px-6">
               <p className="text-sm font-bold text-asu-gold mb-4">The ASU difference:</p>
               <h2 className="text-asu-h1-hero font-black text-white">

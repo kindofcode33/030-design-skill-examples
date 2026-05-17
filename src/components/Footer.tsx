@@ -5,7 +5,7 @@ export default function Footer() {
         <div className="max-w-asu-content mx-auto px-asu-3 h-full flex items-center justify-between">
           <a href="https://www.asu.edu">
             <img
-              src="/asu/logos/asu-horizontal-white.svg"
+              src={`${import.meta.env.BASE_URL}asu/logos/asu-horizontal-white.svg`}
               alt="Arizona State University."
               className="h-12 w-auto"
             />
@@ -90,7 +90,7 @@ export default function Footer() {
           </nav>
           <a href="https://www.asu.edu/rankings">
             <img
-              src="/asu/logos/footer-rank.webp"
+              src={`${import.meta.env.BASE_URL}asu/logos/footer-rank.webp`}
               alt="Repeatedly ranked #1 in innovation"
               className="h-[50px] w-auto"
             />
