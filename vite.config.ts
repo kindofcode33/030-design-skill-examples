@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 import path from 'path'
 
 export default defineConfig({
-  base: process.env.BASE_PATH || '/',
+  base: process.env.BASE_PATH || '/030-design-skill-examples/',
   plugins: [react(), tailwindcss()],
   server: {
     port: 3000,
